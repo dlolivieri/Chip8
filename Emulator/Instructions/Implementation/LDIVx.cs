@@ -1,5 +1,4 @@
 ﻿using Chip8.Emulator.Cpu;
-using System;
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
@@ -12,7 +11,13 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            throw new NotImplementedException();
+            byte vx = opcode.GetNibble(1);
+            ushort startIndex = core.Registers.I;
+
+            for(int i = 0; i <= vx; i++)
+                core.Memory.Write8(startIndex + i, core.Registers[i]);
+
+            core.IncrementPC();
         }
     }
 }

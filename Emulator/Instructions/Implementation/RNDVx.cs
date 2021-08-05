@@ -11,7 +11,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// The interpreter generates a random number from 0 to 255, which is then ANDed with the value kk. The results are stored in Vx.
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
-        {   
+        {
             int randomNumber = new Random().Next(byte.MaxValue);
             Execute(core, opcode, (byte)randomNumber);          
         }

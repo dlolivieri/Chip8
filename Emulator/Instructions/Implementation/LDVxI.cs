@@ -12,7 +12,13 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            throw new NotImplementedException();
+            byte vx = opcode.GetNibble(1);
+            ushort startIndex = core.Registers.I;
+
+            for (int i = 0; i <= vx; i++)
+                core.Registers[i] = core.Memory.Read8(startIndex + i);
+
+            core.IncrementPC();
         }
     }
 }

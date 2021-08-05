@@ -1,5 +1,4 @@
 ﻿using Chip8.Emulator.Cpu;
-using System;
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
@@ -12,7 +11,16 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            throw new NotImplementedException();
+            byte vx = opcode.GetNibble(1);
+            byte vxValue = core.Registers[vx];
+
+            byte vy = opcode.GetNibble(2);
+            byte vyValue = core.Registers[vy];
+
+            core.Registers[0xF] = (byte)(vxValue > vyValue  ? 1 : 0);
+            core.Registers[vx] = (byte)(vxValue - vyValue);
+
+            core.IncrementPC();
         }
     }
 }
