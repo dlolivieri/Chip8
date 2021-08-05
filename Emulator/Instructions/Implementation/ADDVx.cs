@@ -11,7 +11,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            byte vx = opcode.GetNibble(1);
+            byte vx = opcode.X;
             byte kk = opcode.RightByte;
             //TODO: What happens if the addition overflows the byte?
             core.Registers[vx] += kk;

@@ -11,10 +11,10 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            byte vx = opcode.GetNibble(1);
+            byte vx = opcode.X;
             byte vxValue = core.Registers[vx];
 
-            byte vy = opcode.GetNibble(2);
+            byte vy = opcode.Y;
             byte vyValue = core.Registers[vy];
 
             core.Registers[0xF] = (byte)(vxValue > vyValue  ? 1 : 0);

@@ -11,7 +11,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            ushort nnn = opcode.GetNNN();
+            ushort nnn = opcode.NNN;
             core.Registers.I = nnn;
             core.IncrementPC();
         }

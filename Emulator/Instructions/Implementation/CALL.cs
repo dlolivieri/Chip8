@@ -13,7 +13,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         {
             core.SP++;
             core.Stack.Push(core.PC);
-            ushort nnn = opcode.GetNNN();
+            ushort nnn = opcode.NNN;
             core.PC = nnn;       
         }
     }

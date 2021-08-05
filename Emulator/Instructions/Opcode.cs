@@ -16,6 +16,12 @@ namespace Chip8.Emulator.Instructions
         protected byte? _rightByte;
         public byte RightByte => _rightByte ??= Code.GetRightByte();
 
+        public byte X => GetNibble(1);
+
+        public byte Y => GetNibble(2);
+
+        public ushort NNN => (ushort)(Code & 0x0FFF);
+
         public Opcode(ushort code)
         {
             Code = code;
@@ -40,15 +46,6 @@ namespace Chip8.Emulator.Instructions
         public byte GetInstructionIdentifier()
         {
             return Code.GetNibble(0);
-        }
-
-        /// <summary>
-        /// Get the last 3 Nibbles of the OpCode as a ushort.
-        /// </summary>
-        /// <returns>The last 3 Nibbles of the OpCode as a ushort.</returns>
-        public ushort GetNNN()
-        {
-            return (ushort)(Code & 0x0FFF);
         }
     }
 }

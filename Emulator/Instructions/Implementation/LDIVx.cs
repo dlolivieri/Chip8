@@ -11,7 +11,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            byte vx = opcode.GetNibble(1);
+            byte vx = opcode.X;
             ushort startIndex = core.Registers.I;
 
             for(int i = 0; i <= vx; i++)

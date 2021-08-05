@@ -3,15 +3,30 @@
     public interface IOpcode
     {
         ushort Code { get; }
-        public byte[] Nibbles { get; }
-        public byte LeftByte { get; }
 
-        public byte RightByte { get; }
+        byte[] Nibbles { get; }
 
-        public byte GetNibble(int index);
+        byte LeftByte { get; }
 
-        public ushort GetNNN();
+        byte RightByte { get; }
 
-        public byte GetInstructionIdentifier();
+        /// <summary>
+        /// Get nXnn nibble of the ushort Code as a byte in the format of 0xX
+        /// </summary>
+        byte X { get; }
+
+        /// <summary>
+        /// Get nnYn nibble of the ushort Code as a byte in the format of 0xY
+        /// </summary>
+        byte Y { get; }
+
+        byte GetNibble(int index);
+
+        /// <summary>
+        /// Get the last 3 Nibbles of the ushort as a ushort in the format of 0x0NNN
+        /// </summary>
+        ushort NNN { get; }
+
+        byte GetInstructionIdentifier();
     }   
 }

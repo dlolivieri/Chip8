@@ -24,7 +24,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// <param name="randomNumber">Number to & with NN</param>
         public void Execute(IChip8Core core, IOpcode opcode, byte randomNumber)
         {
-            byte vx = opcode.GetNibble(1);
+            byte vx = opcode.X;
             byte kk = opcode.RightByte;
             core.Registers[vx] = (byte)(randomNumber & kk);
             core.IncrementPC();

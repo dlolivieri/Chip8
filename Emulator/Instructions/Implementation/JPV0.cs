@@ -12,7 +12,7 @@ namespace Chip8.Emulator.Instructions.Implementation
         public void Execute(IChip8Core core, IOpcode opcode)
         {
             byte v0 = core.Registers[0];
-            ushort nnn = opcode.GetNNN();
+            ushort nnn = opcode.NNN;
             core.PC = (ushort)(v0 + nnn);
         }
     }

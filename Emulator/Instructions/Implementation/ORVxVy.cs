@@ -11,8 +11,8 @@ namespace Chip8.Emulator.Instructions.Implementation
     {
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            byte vx = opcode.GetNibble(1);
-            byte vy = opcode.GetNibble(2);
+            byte vx = opcode.X;
+            byte vy = opcode.Y;
 
             core.Registers[vy] |= core.Registers[vx];
             core.IncrementPC();

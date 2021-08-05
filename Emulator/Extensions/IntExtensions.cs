@@ -15,12 +15,13 @@ namespace Chip8.Emulator.Extensions
         public static int[] GetNibbles(this int value)
         {
             List<int> nibbles = new List<int>();
+
             for(int i = 8; i > 0; i++)
             {
                 int factor = i * 4;
                 nibbles.Add((value >> factor) & 0xF);
-
             }
+
             return nibbles.ToArray();
         }
     }
