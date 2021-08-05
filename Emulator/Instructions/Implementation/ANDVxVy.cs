@@ -1,5 +1,4 @@
 ﻿using Chip8.Emulator.Cpu;
-using System;
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
@@ -12,9 +11,6 @@ namespace Chip8.Emulator.Instructions.Implementation
         /// </summary>
         public void Execute(IChip8Core core, IOpcode opcode)
         {
-            if (core == null) throw new ArgumentNullException("core");
-            if (opcode == null) throw new ArgumentNullException("opcode");
-
             byte vx = opcode.GetNibble(1);
             byte vy = opcode.GetNibble(2);
 
