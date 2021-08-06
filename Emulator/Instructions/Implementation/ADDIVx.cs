@@ -12,8 +12,6 @@ namespace Chip8.Emulator.Instructions.Implementation
         public void Execute(IChip8Core core, IOpcode opcode) 
         {
             byte vx = opcode.X;
-            ushort i = core.Registers.I;
-            //TODO: What happens if the addition overflows the byte?
             core.Registers.I += core.Registers[vx];
             core.IncrementPC();
         }

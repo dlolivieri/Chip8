@@ -9,7 +9,7 @@ namespace Chip8.Emulator.Cpu
     {
         public IInstruction GetInstruction(IOpcode opcode)
         {
-            byte id = opcode.GetInstructionIdentifier();
+            byte id = opcode.InstructionId;
             ushort code = opcode.Code;
 
             return (id) switch 

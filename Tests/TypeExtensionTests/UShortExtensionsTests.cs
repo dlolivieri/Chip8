@@ -37,6 +37,16 @@ namespace Chip8.Tests.TypeExtensionTests
             });
         }
 
+        [Test]
+        public void GetNibbleTest()
+        {
+            ushort value = 0x1234;
+            Assert.IsTrue(value.GetNibble(0) == 0x01);
+            Assert.IsTrue(value.GetNibble(1) == 0x02);
+            Assert.IsTrue(value.GetNibble(2) == 0x03);
+            Assert.IsTrue(value.GetNibble(3) == 0x04);
+        }
+
         public void TestAllUShortValues(Action<ushort> testAction)
         {
             for (ushort i = ushort.MinValue; i < ushort.MaxValue; i++)

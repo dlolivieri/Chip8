@@ -29,8 +29,8 @@ namespace Chip8.Emulator.Extensions
         {
             if(index > 3) throw new ArgumentOutOfRangeException("index");
 
-            int factor = (index % 3) * 4;
-            return (byte)(us >> factor);      
+            int factor = 16 - (4 * (index + 1));
+            return (byte)((us >> factor) & 0x000F);      
         }
 
         public static byte GetLeftByte(this ushort us)
