@@ -27,7 +27,7 @@ namespace Chip8.Emulator.Extensions
         /// <returns>A nibble (4 bits) as a byte</returns>
         public static byte GetNibble(this ushort us, int index)
         {
-            if(index > 3) throw new ArgumentOutOfRangeException("index");
+            if(index < 0 || index > 3) throw new ArgumentOutOfRangeException("index");
 
             int factor = 16 - (4 * (index + 1));
             return (byte)((us >> factor) & 0x000F);      
