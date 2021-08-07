@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Chip8.Tests.Cpu
 {
-    class MemoryTests
+    class Memory_Test
     {
         IChip8Memory TestMemory;
 

@@ -4,7 +4,7 @@ using System;
 
 namespace Chip8.Tests.TypeExtensionTests
 {
-    class UShortExtensionsTests
+    class UShortExtensions_Test
     {
         [Test]
         public void GetNibblesTest()

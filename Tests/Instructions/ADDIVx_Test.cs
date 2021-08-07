@@ -5,13 +5,13 @@ using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {
-    class ADDIVxTest : InstructionTestBase
+    class ADDIVx_Test : InstructionTestBase
     {
         [Test]
         [TestCase(0xF11E, 0x00, 0x03)]
         [TestCase(0xF11E, 0x01, 0x04)]
         [TestCase(0xF11F, 0x02, 0x05)]
-        public void ADDIVx(int opcodeValue, int initialIValue, int expectedResult)
+        public void ADDIVx_Execute_Test(int opcodeValue, int initialIValue, int expectedResult)
         {
             TestCore.Registers.I = (ushort)initialIValue;
             TestCore.Registers[1] = 0x03;
