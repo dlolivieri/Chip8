@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class JP : IInstruction
+    public class JP : IInstruction
     {
         /// <summary>
         /// 1nnn - JP addr

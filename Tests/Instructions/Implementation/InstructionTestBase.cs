@@ -1,7 +1,7 @@
 ﻿using Chip8.Emulator.Cpu;
 using NUnit.Framework;
 
-namespace Chip8.Tests.Instructions
+namespace Chip8.Tests.Instructions.Implementation
 {
     [TestFixture]
     class InstructionTestBase

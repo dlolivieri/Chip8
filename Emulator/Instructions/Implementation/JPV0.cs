@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class JPV0 : IInstruction
+    public class JPV0 : IInstruction
     {
         /// <summary>
         /// Bnnn - JP V0, addr

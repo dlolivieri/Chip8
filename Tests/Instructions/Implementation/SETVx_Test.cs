@@ -2,7 +2,7 @@
 using Chip8.Emulator.Instructions.Implementation;
 using NUnit.Framework;
 
-namespace Chip8.Tests.Instructions
+namespace Chip8.Tests.Instructions.Implementation
 {
     [TestFixture]
     class SetVx_Test : InstructionTestBase
