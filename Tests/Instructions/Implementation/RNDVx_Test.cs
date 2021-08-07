@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Chip8.Tests.Instructions.Implementation
 {
     [TestFixture]
-    class RAND_Test : InstructionTestBase
+    class RNDVx_Test : InstructionTestBase
     {
         [Test]
         [TestCase(0xC0FF, 0x0, 0xFF, 0xFF)]
@@ -17,6 +17,7 @@ namespace Chip8.Tests.Instructions.Implementation
             instruction.Execute(TestCore, opcode, (byte)randomNumber);
 
             Assert.IsTrue(TestCore.Registers[expectedRegister] == 0xFF);
+            Assert.IsTrue(TestCore.PC == 2);
         }
     }
 }

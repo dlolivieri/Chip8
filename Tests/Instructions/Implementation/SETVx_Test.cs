@@ -41,6 +41,7 @@ namespace Chip8.Tests.Instructions.Implementation
             instruction.Execute(TestCore, opcode);
 
             Assert.IsTrue(TestCore.Registers[expectedRegister] == (byte)expectedValue);
+            Assert.IsTrue(TestCore.PC == 2);
         }
    
     }

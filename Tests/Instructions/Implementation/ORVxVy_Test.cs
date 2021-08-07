@@ -5,26 +5,25 @@ using NUnit.Framework;
 namespace Chip8.Tests.Instructions.Implementation
 {
     [TestFixture]
-    class ADDVxVy_Test : InstructionTestBase
+    class ORVxVy_Test : InstructionTestBase
     {
-        [TestCase(0x8100, 0x00, 0x01, 0x00)]
-        [TestCase(0x8650, 0x04, 0x06, 0x00)]
-        [TestCase(0x8288, 0xFF, 0x01, 0x01)]
-        public void ADDVxVy_Execute_Test(int opcodeValue, int vxValue, int vyValue, int expectedV0)
+        [TestCase(0x8102, 0x00, 0x01)]
+        [TestCase(0x8652, 0x04, 0x06)]
+        [TestCase(0x8282, 0xFF, 0x01)]
+        public void ORVxVy_Execute_Test(int opcodeValue, int vxValue, int vyValue)
         {
             ushort ushortOpcode = (ushort)opcodeValue;
 
             byte vx = GetVx(ushortOpcode);
             TestCore.Registers[vx] = (byte)vxValue;
 
-            byte vy = GetVy(ushortOpcode);     
+            byte vy = GetVy(ushortOpcode);
             TestCore.Registers[vy] = (byte)vyValue;
 
-            ADDVxVy instruction = new ADDVxVy();
+            ORVxVy instruction = new ORVxVy();
             instruction.Execute(TestCore, new Opcode(ushortOpcode));
 
-            Assert.That(TestCore.Registers[vx] == (byte)((vxValue + vyValue) & 0xFF));
-            Assert.That(TestCore.Registers[0xF] == expectedV0);
+            Assert.That(TestCore.Registers[vx] == (byte)(vxValue | vyValue));
             Assert.That(TestCore.PC == 2);
         }
     }

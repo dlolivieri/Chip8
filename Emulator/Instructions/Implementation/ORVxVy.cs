@@ -14,7 +14,7 @@ namespace Chip8.Emulator.Instructions.Implementation
             byte vx = opcode.X;
             byte vy = opcode.Y;
 
-            core.Registers[vy] |= core.Registers[vx];
+            core.Registers[vx] |= core.Registers[vy];
             core.IncrementPC();
         }
     }
