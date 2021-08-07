@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using Chip8.Emulator.Instructions;
 using Chip8.Emulator.Instructions.Implementation;
-using Chip8.Emulator.Instructions;
+using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {

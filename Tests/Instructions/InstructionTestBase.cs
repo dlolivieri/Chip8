@@ -1,7 +1,6 @@
 ﻿using Chip8.Emulator.Cpu;
 using NUnit.Framework;
 
-
 namespace Chip8.Tests.Instructions
 {
     [TestFixture]
@@ -14,6 +13,21 @@ namespace Chip8.Tests.Instructions
         public void Setup()
         {
             TestCore = new Chip8Core();
+        }
+
+        protected byte GetVx(ushort opcode)
+        {
+            return (byte)((opcode >> 8) & 0x000F);
+        }
+
+        protected byte GetVy(ushort opcode)
+        {
+            return (byte)((opcode >> 4) & 0x000F);
+        }
+
+        protected byte GetKK(ushort opcode)
+        {
+            return (byte)(opcode & 0x00FF);
         }
     }
 }

@@ -1,9 +1,6 @@
-﻿using Chip8.Emulator.Cpu;
-using Chip8.Emulator.Instructions;
+﻿using Chip8.Emulator.Instructions;
 using Chip8.Emulator.Instructions.Implementation;
-using Chip8.Emulator.Extensions;
 using NUnit.Framework;
-
 
 namespace Chip8.Tests.Instructions
 {

@@ -1,5 +1,4 @@
-﻿using Chip8.Emulator.Extensions;
-using Chip8.Emulator.Instructions;
+﻿using Chip8.Emulator.Instructions;
 using Chip8.Emulator.Instructions.Implementation;
 using NUnit.Framework;
 

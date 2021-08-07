@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using Chip8.Emulator.Extensions;
+﻿using Chip8.Emulator.Extensions;
+using NUnit.Framework;
 using System;
 
 namespace Chip8.Tests.TypeExtensionTests

@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class ADDVx : IInstruction
+    public class ADDVx : IInstruction
     {
         /// <summary>
         /// 7xkk - ADD Vx, byte
