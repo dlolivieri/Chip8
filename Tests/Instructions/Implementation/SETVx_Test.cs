@@ -13,12 +13,13 @@ namespace Chip8.Tests.Instructions.Implementation
         [TestCase(0x63F3, 0x03, 0xF3)]
         public void SetVx_Execute_Test(int opcodeValue, int expectedRegister, int expectedValue)
         {
-            TestVx(opcodeValue, expectedRegister, expectedValue);
+            TestVx(opcodeValue, expectedRegister, expectedValue, 2);
         }
 
         [Test]
         public void SetAllVx_Test()
         {
+            int expectedPC = 0;
             for(int i = 0; i < TestCore.Registers.RegisterCount; i++)
             {
                 for (int j = 0; j <= byte.MaxValue; j++)
@@ -27,12 +28,12 @@ namespace Chip8.Tests.Instructions.Implementation
                     int expectedRegister = i;
                     int expectedValue = j;
 
-                    TestVx(opcodeValue, expectedRegister, expectedValue);
+                    TestVx(opcodeValue, expectedRegister, expectedValue, expectedPC += 2);
                 }
             }      
         }
 
-        public void TestVx(int opcodeValue, int expectedRegister, int expectedValue)
+        public void TestVx(int opcodeValue, int expectedRegister, int expectedValue, int expectedPC)
         {
             ushort ushortOpcode = (ushort)opcodeValue;
             Opcode opcode = new Opcode(ushortOpcode);
@@ -41,7 +42,7 @@ namespace Chip8.Tests.Instructions.Implementation
             instruction.Execute(TestCore, opcode);
 
             Assert.IsTrue(TestCore.Registers[expectedRegister] == (byte)expectedValue);
-            Assert.IsTrue(TestCore.PC == 2);
+            Assert.IsTrue(TestCore.PC == expectedPC);
         }
    
     }
