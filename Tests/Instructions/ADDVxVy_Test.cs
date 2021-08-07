@@ -24,6 +24,7 @@ namespace Chip8.Tests.Instructions
             Assert.That(TestCore.Registers[vx] == (byte)((vxValue + vyValue) & 0xFF));
             Assert.That(TestCore.Registers[0xF] == expectedV0);
             Assert.That(TestCore.PC == 2);
+            Assert.IsTrue(false);
         }
     }
 }
