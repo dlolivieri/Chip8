@@ -13,7 +13,11 @@ namespace Chip8.Emulator.Instructions.Implementation
         {
             byte vx = opcode.X;
             byte vy = opcode.Y;
-            core.PC += vx == vy ? (ushort)2 : (ushort)1;
+
+            
+
+            if (core.Registers[vx] == core.Registers[vy])
+                core.IncrementPC();
         }
     }
 }

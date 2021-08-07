@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class XORVxVy : IInstruction
+    public class XORVxVy : IInstruction
     {
         /// <summary>
         /// 8xy3 - XOR Vx, Vy
