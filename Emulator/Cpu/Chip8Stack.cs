@@ -8,5 +8,10 @@ namespace Chip8.Emulator.Cpu
         {
             Insert(0, value);
         }
+
+        public ushort Peek()
+        {
+            return this[0];
+        }
     }
 }

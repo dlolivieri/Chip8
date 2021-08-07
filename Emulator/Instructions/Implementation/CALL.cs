@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class CALL : IInstruction
+    public class CALL : IInstruction
     {
         /// <summary>
         /// 2nnn - CALL addr

@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {
-
+    [TestFixture]
     class SetVx_Test : InstructionTestBase
     {
         [Test]

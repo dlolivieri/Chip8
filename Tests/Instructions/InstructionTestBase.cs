@@ -29,5 +29,10 @@ namespace Chip8.Tests.Instructions
         {
             return (byte)(opcode & 0x00FF);
         }
+
+        protected ushort GetNNN(ushort opcode)
+        {
+            return (ushort)(opcode & 0x0FFF);
+        }
     }
 }

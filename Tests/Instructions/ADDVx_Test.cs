@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {
+    [TestFixture]
     class ADDVx_Test
     {
         class ADDIVx_Test : InstructionTestBase

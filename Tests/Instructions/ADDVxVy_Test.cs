@@ -4,11 +4,13 @@ using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {
+    [TestFixture]
     class ADDVxVy_Test : InstructionTestBase
     {
         [TestCase(0x7100, 0x00, 0x01, 0x00)]
+        [TestCase(0x7650, 0x04, 0x06, 0x00)]
         [TestCase(0x7288, 0xFF, 0x01, 0x01)]
-        public void ADDIVx_Execute_Test(int opcodeValue, int vxValue, int vyValue, int expectedV0)
+        public void ADDVxVy_Execute_Test(int opcodeValue, int vxValue, int vyValue, int expectedV0)
         {
             ushort ushortOpcode = (ushort)opcodeValue;
 

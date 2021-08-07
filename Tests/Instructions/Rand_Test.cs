@@ -4,7 +4,8 @@ using NUnit.Framework;
 
 namespace Chip8.Tests.Instructions
 {
-    class Rand_Test : InstructionTestBase
+    [TestFixture]
+    class RAND_Test : InstructionTestBase
     {
         [Test]
         [TestCase(0xC0FF, 0x0, 0xFF, 0xFF)]

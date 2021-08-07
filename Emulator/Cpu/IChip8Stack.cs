@@ -3,5 +3,6 @@
     public interface IChip8Stack
     {
         void Push(ushort value);
+        ushort Peek();
     }
 }

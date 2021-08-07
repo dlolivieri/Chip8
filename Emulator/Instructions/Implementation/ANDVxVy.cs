@@ -2,7 +2,7 @@
 
 namespace Chip8.Emulator.Instructions.Implementation
 {
-    class ANDVxVy : IInstruction
+    public class ANDVxVy : IInstruction
     {
         /// <summary>
         /// 8xy2 - AND Vx, Vy
@@ -15,6 +15,8 @@ namespace Chip8.Emulator.Instructions.Implementation
             byte vy = opcode.Y;
 
             core.Registers[vx] &= core.Registers[vy];
+
+            core.IncrementPC();
         }
     }
 }
